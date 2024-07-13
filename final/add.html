@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <script type="text/javascript" src="../lib/jquery.min.js"></script>
+    <script type="text/javascript" src="../lib/osql.js"></script>
+
+    <script>
+        osql.requireLogin();//すべてのページに入れる．google認証をして，osql.connect()や，osql.getMe()を使えるようにしてくれる．
+
+        function add() {
+            doadd();
+        }
+
+        async function doadd() {
+            var planid = document.getElementById('id').value;
+            var userId = sessionStorage.getItem('userid');
+            var userName = sessionStorage.getItem('username');
+            var month = document.getElementById('month').value;
+            var day = document.getElementById('day').value;
+            var content = document.getElementById('content').value;
+
+            var sql = `insert into Plans (id, userid, username, month, day, content) values("${planid}","${userId}","${userName}","${month}", "${day}", "${content}");`;
+            var objects = await osql.connect(sql);
+            console.log(objects);
+
+            document.getElementById('result').innerHTML = '追加されました';
+        }
+
+    </script>
+
+</head>
+
+<body>
+    <h1>予定を追加する</h1>
+    予定:<input id="id" value="" type="text"><br>
+    月:<input id="month" value="" type="text"><br>
+    日:<input id="day" value="" type="text"><br>
+    内容:<input id="content" value="" type="text"><br>
+    <button onclick="add()">追加</button><br>
+    <p id="result"></p>
+</body>
+
+</html>
