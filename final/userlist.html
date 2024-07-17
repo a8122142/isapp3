@@ -16,30 +16,46 @@
         });
 
         async function execSelect() {
-            var sql = 'select * from Users';
+            var userID = sessionStorage.getItem('userid');
+            var userNAME = sessionStorage.getItem('username');
+            var sql = 'select * from Users where id = "' + userID + '" and name = "' + userNAME + '"';
             var objects = await osql.connect(sql);
             console.log(objects);
             var html = '';
             html = html + '<table border="1">';
+            html += '<thead><tr><th>ID</th><th>Name</th><th>Select</th></tr></thead><tbody>';
             for (var i = 0; i < objects.length; i++) {
                 html = html + '<tr>';
                 var object = objects[i];
                 html = html + '<td>' + object.id + '</td>';
                 html = html + '<td>' + object.name + '</td>';
-                html = html + '<td>' + '<a href="update.html?userid=' + object.id + '">変更</a>' + '</td>';
+                html = html + '<td><button onclick="fillTextBoxes(\'' + object.id + '\', \'' + object.name + '\')">選択</button></td>';
                 html = html + '</tr>';
             }
-            html = html + '</table>';
+            html = html + '</tbody></table>';
             document.getElementById('result').innerHTML = html;
         }
 
         async function Delete() {
-            var userid = document.getElementById('delete').value;
-            var sql = `delete from Users where id = "${userid}"`;
+            var userid = document.getElementById('deletei').value;
+            var username = document.getElementById('deleten').value;
+            var userpassword = document.getElementById('deletep').value;
+
+            var sql = `delete from Users where id = "${userid}" and name = "${username}" and password = "${userpassword}"`;
             var result = await osql.connect(sql);
             execSelect();
+            redirectToIndex();
         }
-        
+
+        function fillTextBoxes(id, name) {
+            document.getElementById('deletei').value = id;
+            document.getElementById('deleten').value = name;
+        }
+
+        function redirectToIndex() {
+            var url = 'index.html';
+            window.location.href = url;
+        }
         
     </script>
 
@@ -48,10 +64,15 @@
 <body>
     <h1>Users</h1>
     <hr>
-    ID:<input id="delete" type="text">
+    ID:<input id="deletei" type="text"><br>
+    NAME:<input id="deleten" type="text"><br>
+    PASSWORD:<input id="deletep" type="text"><br>
     <button onclick="Delete()">削除</button>
     <hr>
-    <p id="result">xxxx</p>
+    <p id="result"></p>
+
+    <hr>
+    <p><a href="usertop.html">トップに戻る</a></p>
 </body>
 
 </html>
