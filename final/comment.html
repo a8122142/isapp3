@@ -4,6 +4,7 @@
 
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link rel="stylesheet" href="./main.css">
     <script type="text/javascript" src="../lib/jquery.min.js"></script>
     <script type="text/javascript" src="../lib/osql.js"></script>
 
@@ -88,18 +89,21 @@
 </head>
 
 <body>
-    <h2>予定の選択</h2>
-    合言葉:<input id="id" value="" type="text"><br>
-    日付:<input id="date" value="" type="text">(例：20XX-YY‐ZZ or 20XXYYZZ)<br>
-    予定:<input id="content" value="" type="text"><br>
-    コメント:<input id="comment" value="" type="text">
-    <button onclick="comsel()">予定を選択しコメントする</button><br>
+    <div>
+        <h2>予定の選択</h2>
+        合言葉:<input id="id" value="" type="text"><br>
+        日付:<input id="date" value="" type="text"><br>
+        (例：20XX-YY‐ZZ or 20XXYYZZ)<br>
+        予定:<input id="content" value="" type="text"><br>
+        コメント:<input id="comment" value="" type="text"><br>
+        <button onclick="comsel()">予定を選択しコメントする</button><br>
 
-    <p id="result2"></p>
-    <hr>
-    <h2>予定の連絡</h2>
+        <p id="result2"></p>
+        <hr>
+        <h2>予定の連絡</h2>
 
-    <p id="result1"></p>
+        <p id="result1"></p>
+    </div>
     <hr>
     <p><a href="usertop.html">トップに戻る</a></p>
 </body>

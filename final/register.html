@@ -4,7 +4,7 @@
 
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-
+    <link rel="stylesheet" href="./main.css">
     <script type="text/javascript" src="../lib/jquery.min.js"></script>
     <script type="text/javascript" src="../lib/osql.js"></script>
 
@@ -25,21 +25,31 @@
             console.log(objects);
 
             document.getElementById('result').innerHTML = 'OK';
+            redirectToIndex();
+        }
+        function redirectToIndex() {
+            var url = 'index.html';
+            window.location.href = url;
         }
     </script>
 
 </head>
 
 <body>
-    <h1>User登録</h1>
-    userid:<input id="ID" value="" type="textfield">
-    <br>
-    password:<input id="password" value="" type="password">(公開されますので真面目なパスワードは入れないでください．)
-    <br>
-    name:<input id="name" value="" type="textfield">
-    <button onclick="button1Pressed()">登録</button>
+    <div>
+        <h1>User登録</h1>
+        ユーザーID:<input id="ID" value="" type="textfield">
+        <br>
+        パスワード:<input id="password" value="" type="password">
+        <br>
+        登録名:<input id="name" value="" type="textfield">
+        <br><br>
+        <button onclick="button1Pressed()">登録</button>
+    </div>
     <br>
     <p id="result"></p>
+    <hr>
+    <p><a href="index.html">戻る</a></p>
 </body>
 
 </html>

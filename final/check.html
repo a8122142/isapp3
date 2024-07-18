@@ -3,6 +3,7 @@
 
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link rel="stylesheet" href="./main.css">
     <script type="text/javascript" src="../lib/jquery.min.js"></script>
     <script type="text/javascript" src="../lib/osql.js"></script>
 
@@ -78,15 +79,18 @@
 </head>
 
 <body>
-    <h1>スケジュール</h1>
-    <hr>
-    <p><a href="add.html">[予定を追加する]</a> <a href="delete.html">[予定を削除する]</a></p>
+    <div>
+        <h1>スケジュール</h1>
+        <hr>
+        <p><a href="add.html">[予定を追加する]</a> <a href="delete.html">[予定を削除する]</a></p>
+        日付で絞り込む:<input type="text" id="selectd">
+        <button onclick="doselectd()">検索</button><br>
+        (例:20XX-YY-ZZ)<br>
+        予定で絞り込む:<input type="text" id="selectp">
+        <button onclick="doselectp()">検索</button><br>
     
-    日付で絞り込む(例:20XX-YY-ZZ):<input type="text" id="selectd">
-    <button onclick="doselectd()">検索</button><br>
-    予定で絞り込む:<input type="text" id="selectp">
-    <button onclick="doselectp()">検索</button><br>
-    <p id="result"></p>
+        <p id="result"></p>
+    </div>
     <hr>
     <p><a href="usertop.html">トップに戻る</a></p>
 </body>

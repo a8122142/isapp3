@@ -4,7 +4,7 @@
 
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-
+    <link rel="stylesheet" href="./main.css">
     <script type="text/javascript" src="../lib/jquery.min.js"></script>
     <script type="text/javascript" src="../lib/osql.js"></script>
 
@@ -18,7 +18,7 @@
 
         function init(){
             var userName = sessionStorage.getItem('username');
-            document.getElementById('welcome').innerHTML = 'ようこそ ' + userName + ' さん';
+            document.getElementById('welcome').innerHTML = '' + userName + ' さんがログインしています。';
         }
 
     </script>
@@ -26,8 +26,8 @@
 </head>
 
 <body>
-    <h1>ユーザトップ</h1>
-    <p id="welcome">ようこそ++さん</p>
+    <h1>TOP</h1>
+    <p id="welcome"></p>
     <hr>
     <p><a href="check.html">[予定を確認する]</a> <a href="comment.html">[予定の連絡]</a> <a href="userlist.html">[アカウント管理]</a></p>
     <hr>

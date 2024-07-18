@@ -4,7 +4,7 @@
 
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-
+    <link rel="stylesheet" href="./main.css">
     <script type="text/javascript" src="../lib/jquery.min.js"></script>
     <script type="text/javascript" src="../lib/osql.js"></script>
 
@@ -60,14 +60,17 @@
 </head>
 
 <body>
-    <h1>予定を追加する</h1>
-    合言葉:<input id="id" value="" type="text"><br>
-    日付:<input id="date" value="" type="text">(例：20XX-YY‐ZZ or 20XXYYZZ)<br>
-    予定:<input id="content" value="" type="text"><br>
-    <button onclick="add()">追加</button><br>
-    
-    <p id="result2"></p>
-    <p id="result"></p>
+    <div>
+        <h1>予定を追加する</h1>
+        合言葉:<input id="id" value="" type="text"><br>
+        日付:<input id="date" value="" type="text"><br>
+        (例：20XX-YY‐ZZ or 20XXYYZZ)<br>
+        予定:<input id="content" value="" type="text"><br><br>
+        <button onclick="add()">追加</button><br>
+        
+        <p id="result2"></p>
+        <p id="result"></p>
+    </div>
 
     <hr>
     <p><a href="check.html">戻る</a></p>

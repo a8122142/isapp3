@@ -4,7 +4,7 @@
 
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-
+    <link rel="stylesheet" href="./main.css">
     <script type="text/javascript" src="../lib/jquery.min.js"></script>
     <script type="text/javascript" src="../lib/osql.js"></script>
 
@@ -62,15 +62,16 @@
 </head> 
 
 <body>
-    <h1>Users</h1>
-    <hr>
-    ID:<input id="deletei" type="text"><br>
-    NAME:<input id="deleten" type="text"><br>
-    PASSWORD:<input id="deletep" type="text"><br>
-    <button onclick="Delete()">削除</button>
-    <hr>
-    <p id="result"></p>
-
+    <div>
+        <h1>Users</h1>
+        <hr>
+        ユーザーID:<input id="deletei" type="text"><br>
+        登録名:<input id="deleten" type="text"><br>
+        パスワード:<input id="deletep" type="text"><br><br>
+        <button onclick="Delete()">削除</button>
+        <hr>
+        <p id="result"></p>
+    </div>
     <hr>
     <p><a href="usertop.html">トップに戻る</a></p>
 </body>
